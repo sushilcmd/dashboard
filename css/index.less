@@ -1,0 +1,1131 @@
+body {
+    margin: 0rem;
+    padding: 0rem;
+    font-family: "Montserrat";
+}
+
+@orange: #f0c517;
+@gray: #ced8e6;
+
+.mainContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), #12171b);
+    background-position: center;
+    background-size: cover;
+
+    .innerContainer {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.94), #12171b);
+
+        .header {
+            position: absolute;
+            height: 8rem;
+            width: 100%;
+            .home,
+            .sync {
+                position: absolute;
+                height: 100%;
+                width: 20%;
+                left: 0rem;
+
+                .homeIcon {
+                    position: absolute;
+                    height: 2.5rem;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .syncBtn {
+                position: absolute;
+                height: 100%;
+                width: 20%;
+                right: 0rem;
+
+                .syncIcon {
+                    position: absolute;
+                    height: 2.5rem;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -webkit-animation: spin 4s linear infinite;
+                    -moz-animation: spin 4s linear infinite;
+                    animation: spin 4s linear infinite;
+                }
+            }
+
+            .customerName {
+                position: absolute;
+                height: 100%;
+                left: 20%;
+                right: 20%;
+                line-height: 8rem;
+                color: @gray;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-size: 1.6rem;
+            }
+        }
+
+        .contentContainer {
+            position: absolute;
+            top: 8rem;
+            bottom: 0rem;
+            width: 100%;
+            overflow: auto;
+
+            .infoContainer {
+                position: relative;
+                float: left;
+                height: auto;
+                width: 100%;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                padding-bottom: 2rem;
+                box-sizing: border-box;
+
+                .dateFilter {
+                    position: relative;
+                    float: left;
+                    height: 3rem;
+                    width: 100%;
+
+                    .date {
+                        position: relative;
+                        float: left;
+                        height: 100%;
+                        width: 47%;
+                        border-top: 1px solid @orange;
+                        border-bottom: 1px solid @orange;
+                        box-sizing: border-box;
+                        text-transform: uppercase;
+                        text-align: center;
+                        font-size: 1.2rem;
+                        color: @orange;
+                        line-height: 3rem;
+
+                        .inputDate {
+                            background: transparent;
+                            color: @orange;
+                            font-size: 1.7rem;
+                            border: none;
+                            text-align: center;
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            float: left;
+                            outline: none;
+
+                            &.endDate {
+                                font-weight: 200;
+                                font-size: 1.5rem;
+                            }
+                        }
+
+                        input[type="date"]::-webkit-clear-button {
+                            -webkit-appearance: none;
+                            display: none;
+                        }
+
+                        input[type="date"]::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            display: none;
+                        }
+
+                        &.marginLeft {
+                            margin-left: 6%;
+                        }
+
+                        .datePicker {
+                            position: absolute;
+                            left: 4rem;
+                            right: 0rem;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .userName {
+                    position: relative;
+                    float: left;
+                    height: 4rem;
+                    width: 100%;
+                    font-size: 1.2rem;
+                    text-align: center;
+                    text-transform: capitalize;
+                    line-height: 4rem;
+                    margin-top: 2rem;
+                    color: #ced8e6;
+                    letter-spacing: 0.5px;
+                }
+
+                .rows {
+                    position: relative;
+                    float: left;
+                    height: auto;
+                    width: 100%;
+                    margin-top: 3rem;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    border: 1px solid @orange;
+                    background: #181b1d;
+
+                    .chartContainer {
+                        position: relative;
+                        float: left;
+                        height: 20rem;
+                        width: 100%;
+
+                        .saleInfo {
+                            position: absolute;
+                            display: none;
+                            height: 2rem;
+                            width: 18rem;
+                            text-align: center;
+                            text-transform: capitalize;
+                            line-height: 2rem;
+                            left: 50%;
+                            bottom: 1rem;
+                            color: white;
+                            transform: translateX(-50%);
+                            font-size: 1.4rem;
+                            font-weight: 200;
+                        }
+                    }
+
+                    .timeFilter {
+                        position: relative;
+                        float: left;
+                        height: 3rem;
+                        width: 100%;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
+                        line-height: 2rem;
+                        box-sizing: border-box; // background: red;
+
+                        .col {
+                            position: relative;
+                            float: left;
+                            height: 100%;
+                            width: 25%;
+                            border-right: 1px solid @orange;
+                            box-sizing: border-box;
+                            text-align: center;
+                            text-transform: uppercase;
+                            font-size: 1.3rem;
+                            color: @orange;
+
+                            &.borderNone {
+                                border: none;
+                            }
+                        }
+                    }
+
+                    &.chart {
+                        border: none;
+                        background: transparent;
+                        margin-top: 2rem;
+                    }
+
+                    &.chartWithData {
+                        height: 20rem;
+                    }
+
+                    &.pieWithGrid {
+                        border: none;
+                        background: transparent;
+                    }
+
+                    .mychart {
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    .infoHeader {
+                        position: relative;
+                        float: left;
+                        height: 4rem;
+                        width: 100%;
+                        border-bottom: 1px solid @orange;
+                        box-sizing: border-box;
+
+                        &.plainText {
+                            line-height: 4rem;
+                            text-align: left;
+                            font-size: 1.2rem;
+                            color: @orange;
+                            text-indent: 0.5rem;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            box-sizing: border-box;
+                        }
+
+                        .icons {
+                            position: absolute;
+                            height: 100%;
+                            width: 4rem;
+
+                            .iconImg {
+                                position: absolute;
+                                height: 1.7rem;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                opacity: 0.5;
+                                box-sizing: border-box;
+
+                                &.chartIcon {
+                                    height: 2rem;
+                                }
+                            }
+
+                            &.dataTable {
+                                left: 0rem;
+                            }
+
+                            &.chart {
+                                right: 0rem;
+                            }
+                        }
+
+                        .name {
+                            position: absolute;
+                            left: 4rem;
+                            right: 4rem;
+                            height: 100%;
+                            line-height: 4rem;
+                            text-align: center;
+                            font-size: 1.2rem;
+                            color: @orange;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    .content {
+                        position: relative;
+                        float: left;
+                        height: auto;
+                        width: 100%;
+
+                        .notFound {
+                            position: relative;
+                            height: 6rem;
+                            width: 100%;
+
+                            .imgIcon {
+                                position: relative;
+                                float: left;
+                                height: 100%;
+                                width: 40%;
+
+                                .img {
+                                    position: absolute;
+                                    height: 2.5rem;
+                                    top: 50%;
+                                    right: 2rem;
+                                    opacity: 0.8;
+                                    transform: translateY(-50%);
+                                }
+                            }
+
+                            .text {
+                                position: relative;
+                                float: left;
+                                height: 100%;
+                                width: 50%;
+                                line-height: 6rem;
+                                text-align: left;
+                                font-size: 1.2rem;
+                                text-transform: capitalize;
+                                font-weight: 200;
+                                color: #ffffff;
+                            }
+                        }
+
+                        .categoryStats {
+                            position: relative;
+                            float: left;
+                            width: 100%;
+                            height: auto;
+
+                            .infoCard {
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                float: left;
+
+                                .card {
+                                    position: relative;
+                                    float: left;
+                                    height: 7rem;
+                                    width: 48%;
+                                    margin-top: 1.5rem;
+                                    background: #181b1d;
+                                    box-sizing: border-box;
+                                    border: 1px solid @orange;
+                                    border-radius: 3px;
+
+                                    .paymentIcon {
+                                        position: absolute;
+                                        height: 100%;
+                                        width: 7rem;
+                                        display: none;
+
+                                        .modeIcon {
+                                            position: absolute;
+                                            height: 3rem;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%);
+                                        }
+                                    }
+
+                                    .paymentInfoWrapper {
+                                        position: absolute;
+                                        height: 100%;
+                                        left: 0rem;
+                                        right: 0rem;
+                                    }
+
+                                    &.marginLeft {
+                                        margin-left: 1.5rem;
+                                    }
+
+                                    .detail {
+                                        position: relative;
+                                        float: left;
+                                        width: 100%;
+                                        text-align: center;
+                                        font-size: 1.2rem;
+                                        text-transform: uppercase;
+
+                                        &.value {
+                                            height: 4rem;
+                                            line-height: 4rem;
+                                            text-align: center;
+                                            font-size: 1.6rem;
+                                            padding-top: 0.6rem;
+                                            box-sizing: border-box;
+                                            color: @orange;
+                                        }
+
+                                        &.text {
+                                            height: 2rem;
+                                            font-size: 1rem;
+                                            text-transform: uppercase;
+                                            font-weight: 300;
+                                            color: #ced8e6;
+                                            line-height: 2rem;
+                                        }
+                                    }
+                                }
+
+                                .card:nth-child(even) {
+                                    margin-left: 1.3rem;
+                                }
+                            }
+
+                            .infoChart {
+                                position: relative;
+                                float: left;
+                                height: 16rem;
+                                width: 100%;
+                                display: none;
+
+                                .pieChart {
+                                    position: relative;
+                                    height: 100%;
+                                    width: 100%;
+                                    float: left;
+                                    margin-top: 2rem;
+                                }
+                            }
+                        }
+
+                        .table {
+                            position: relative;
+                            float: left;
+                            height: auto;
+                            width: 100%;
+                            box-sizing: border-box;
+
+                            .tableHeader {
+                                position: relative;
+                                float: left;
+                                height: 3rem;
+                                width: 100%;
+                                border-bottom: 1px solid@orange;
+                                color: @gray;
+                                font-size: 1.2rem;
+                                font-weight: 200;
+                                letter-spacing: 0.5px;
+                                text-transform: uppercase;
+                            }
+
+                            .itemConsumptionHeader {
+                                position: relative;
+                                float: left;
+                                height: 3rem;
+                                width: 100%;
+                                border-bottom: 1px solid @orange;
+                                line-height: 3rem;
+                                text-align: center;
+                                color: @orange;
+                                text-transform: uppercase;
+                                font-size: 1.2rem;
+
+                                .itemConsumptionType {
+                                    position: relative;
+                                    float: left;
+                                    height: 100%;
+                                    width: 33.3%;
+                                    border-right: 1px solid @orange;
+                                    box-sizing: border-box;
+
+                                    &.selected {
+                                        background: @orange;
+                                        color: #181b1d;
+                                        width: 33.4%;
+                                    }
+
+                                    &.borderNone {
+                                        border: none;
+                                    }
+                                }
+                            }
+
+                            .tableContent {
+                                position: relative;
+                                float: left;
+                                max-height: 25rem;
+                                width: 100%;
+                                padding-bottom: 1rem;
+                                padding-right: 0.5rem;
+                                box-sizing: border-box;
+                                overflow: auto;
+
+                                .contentRow {
+                                    position: relative;
+                                    float: left;
+                                    height: 3rem;
+                                    width: 100%;
+                                    font-size: 1.2rem;
+                                    font-weight: 200;
+                                    letter-spacing: 0.5px;
+                                    border-bottom: 1px dotted @orange;
+                                    color: @orange;
+
+                                    &.contentRow:last-child {
+                                        border: none;
+                                    }
+                                }
+                            }
+
+                            .contentCol {
+                                position: relative;
+                                float: left;
+                                height: 100%;
+                                line-height: 3rem;
+                                box-sizing: border-box;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                text-align: left;
+                                overflow: hidden;
+
+                                &.category {
+                                    width: 68%;
+                                    padding-left: 1rem;
+                                }
+
+                                &.quantity,
+                                &.sales {
+                                    width: 16%;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        .dataTable {
+                            position: relative;
+                            float: left;
+                            height: 6rem;
+                            width: 100%;
+
+                            &.addScroll {
+                                overflow-X: auto;
+                                overflow-y: hidden;
+                                white-space: nowrap;
+                            }
+
+                            .dataColumn {
+                                position: relative;
+                                display: inline-block;
+                                height: 100%;
+                                width: 32.5%;
+
+                                &.fourCol {
+                                    width: 20%;
+                                    float: left;
+                                }
+
+                                .value {
+                                    position: absolute;
+                                    height: 4rem;
+                                    width: 100%;
+                                    line-height: 4rem;
+                                    text-align: center;
+                                    font-size: 1.6rem;
+                                    color: @orange;
+                                    padding-top: 0.3rem;
+                                    box-sizing: border-box;
+                                }
+
+                                .text {
+                                    position: absolute;
+                                    height: 2rem;
+                                    bottom: 0.5rem;
+                                    width: 100%;
+                                    text-align: center;
+                                    font-size: 1rem;
+                                    text-transform: uppercase;
+                                    font-weight: 300;
+                                    color: #ced8e6;
+                                    line-height: 2rem;
+                                }
+                            }
+                        }
+
+                        .orderTableContainer {
+                            position: relative;
+                            float: left;
+                            height: auto;
+                            width: 100%;
+
+                            .orders {
+                                position: relative;
+                                float: left;
+                                height: auto;
+                                max-height: 25rem;
+                                width: 100%;
+                                overflow: auto;
+                                padding-bottom: 1rem;
+                                box-sizing: border-box;
+
+                                .orderTable {
+                                    position: relative;
+                                    float: left;
+                                    height: 6rem;
+                                    width: 21%;
+                                    margin-top: 1rem;
+                                    margin-left: 1rem;
+                                    border-radius: 0.5rem;
+                                    box-sizing: border-box;
+
+                                    &.isOrder {
+                                        background: #e53935;
+                                    }
+
+                                    &.isBilled {
+                                        background: #1565C0;
+                                    }
+
+                                    .tableImg {
+                                        position: absolute;
+                                        height: 3.5rem;
+                                        width: 100%;
+
+                                        .tableIcon {
+                                            position: absolute;
+                                            height: 2.5rem;
+                                            left: 50%;
+                                            top: 50%;
+                                            opacity: 0.8;
+                                            transform: translate(-50%, -50%);
+                                        }
+                                    }
+
+                                    .billNo {
+                                        position: absolute;
+                                        bottom: 0rem;
+                                        height: 2.5rem;
+                                        width: 100%;
+                                        line-height: 1.5rem;
+                                        text-align: center;
+                                        text-transform: uppercase;
+                                        color: #ffffff;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+                            }
+
+                            .orderSummery {
+                                position: relative;
+                                float: left;
+                                height: 5rem;
+                                width: 100%;
+                                border-top: 1px solid #f0c517;
+                                box-sizing: border-box;
+
+                                .orderSummeryCol {
+                                    position: relative;
+                                    float: left;
+                                    height: 100%;
+                                    width: 50%;
+
+                                    &.occuipied {
+                                        background: #e53935;
+                                    }
+
+                                    &.billed {
+                                        background: #1565C0;
+                                    }
+
+                                    .row {
+                                        position: relative;
+                                        float: left;
+                                        width: 100%;
+                                        text-align: center;
+                                        box-sizing: border-box;
+                                        text-transform: uppercase;
+
+                                        &.value {
+                                            font-size: 1.6rem;
+                                            line-height: 3.5rem;
+                                            height: 3rem;
+                                        }
+
+                                        &.title {
+                                            font-size: 1rem;
+                                            line-height: 1.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .orderDetailsContainer {
+                            position: relative;
+                            float: left;
+                            height: auto;
+                            width: 100%;
+
+                            .detailsHeader,
+                            .detailsFooter {
+                                position: relative;
+                                float: left;
+                                height: 4rem;
+                                width: 100%;
+                                border-bottom: 1px solid #f0c517;
+                                box-sizing: border-box;
+
+                                &.borderTop {
+                                    border-top: 1px solid #f0c517;
+                                }
+
+                                .detailsHeaderCol {
+                                    position: relative;
+                                    float: left;
+                                    height: 100%;
+                                    width: 33.3%;
+                                    line-height: 4rem;
+                                    text-align: center;
+                                    color: #f0c517;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    box-sizing: border-box;
+                                    border-right: 1px solid #f0c517;
+
+                                    &.selected {
+                                        background: #f0c517;
+                                        color: #181b1d;
+                                    }
+
+                                    &.widthHalf {
+                                        width: 50%;
+                                        text-align: center;
+                                    }
+                                }
+
+                                .detailsHeaderCol:last-child {
+                                    border-right: none;
+                                }
+                            }
+
+                            .orderDetailsTable {
+                                position: relative;
+                                float: left;
+                                height: auto;
+                                width: 100%;
+                                overflow: auto;
+
+                                .orderDetailsTableHeader {
+                                    position: relative;
+                                    height: 3rem;
+                                    width: 100%;
+                                    border-bottom: 1px solid #f0c517;
+                                    box-sizing: border-box;
+                                }
+
+                                .innerTableHeader {
+                                    position: relative;
+                                    float: left;
+                                    height: 3rem;
+                                    width: 100%;
+                                    border-bottom: 1px solid #f0c517;
+                                    box-sizing: border-box;
+                                    text-transform: uppercase;
+                                    text-align: center;
+                                    color: #ced8e6;
+                                    font-weight: 200;
+
+                                    .innerTableHeaderCol {
+                                        position: relative;
+                                        float: left;
+                                        height: 100%;
+                                        width: 20%;
+                                        line-height: 3rem;
+                                        text-align: center;
+                                        color: #f0c517;
+                                        text-transform: uppercase;
+                                        letter-spacing: 1px;
+                                        box-sizing: border-box;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        white-space: normal;
+
+                                        &.textLeft {
+                                            text-align: left;
+                                        }
+
+                                        &.fourCol {
+                                            width: 25%;
+                                        }
+                                    }
+                                }
+
+                                .detailRows {
+                                    position: relative;
+                                    float: left;
+                                    height: auto;
+                                    max-height: 20rem;
+                                    width: 100%;
+                                    overflow: auto;
+
+                                    .row {
+                                        position: relative;
+                                        float: left;
+                                        height: 3rem;
+                                        width: 100%;
+                                        border-bottom: 1px dashed #f0c517;
+
+                                        .detailCol {
+                                            position: relative;
+                                            float: left;
+                                            height: 100%;
+                                            width: 20%;
+                                            border-right: 1px dashed #f0c517;
+                                            line-height: 3rem;
+                                            font-size: 1.1rem;
+                                            color: #f0c517;
+                                            box-sizing: border-box;
+                                            font-weight: 200;
+                                            text-transform: uppercase;
+                                            text-align: center;
+
+                                            &.fourCol {
+                                                width: 25%;
+                                            }
+                                        }
+
+                                        .detailCol:first-child {
+                                            text-align: left;
+                                            text-indent: 1rem;
+                                            box-sizing: border-box;
+                                        }
+
+                                        .detailCol:last-child {
+                                            border-right: none;
+                                        }
+                                    }
+
+                                    .row:last-child {
+                                        border-bottom: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .loginPageContainer {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background: linear-gradient(to bottom, #000000, #434343);
+
+        .logo {
+            position: relative;
+            text-align: center;
+            height: auto;
+            width: auto;
+            font-family: 'Gugi', cursive;
+            top: 42px;
+            font-size: 4rem;
+            color: #ced8e6; // .logoIcon {
+            //     position: absolute;
+            //     height: 5rem;
+            //     top: 50%;
+            //     left: 50%;
+            //     transform: translate(-50%, -50%);
+            // }
+        }
+
+        .login {
+            position: relative;
+            height: auto;
+            width: 30rem;
+            text-align: center;
+            left: 30px;
+            top: 140px;
+
+            .form {
+                position: relative;
+                float: left;
+                width: 100%;
+                height: auto;
+
+                .inputRow {
+                    position: relative;
+                    width: 100%;
+                    height: 4rem;
+                    font-size: 1.8rem;
+                    color: @orange;
+                    float: left;
+                    background: none;
+                    margin-top: 2rem;
+                    outline: none;
+                    box-sizing: border-box;
+                    padding-left: 1rem;
+                    font-weight: 200;
+                    letter-spacing: 1px;
+                    border: none;
+                    -webkit-appearance: none;
+                    border-bottom: 1px solid @orange;
+                    text-align: center;
+                }
+            }
+
+            .loginBtn {
+                position: relative;
+                width: 100%;
+                height: 5rem;
+                font-size: 1.8rem;
+                margin-top: 3.5rem;
+                float: left;
+                color: #434343;
+                box-sizing: border-box; //border: 1px solid #000000;
+                background: @orange;
+                border-radius: 4px;
+                text-align: center;
+                line-height: 5rem;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-weight: 300;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .outletScreen {
+
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.94), #12171b);
+
+        .header {
+            position: absolute;
+            height: 6rem;
+            border-bottom: 1px solid #f0c517;
+            width: 100%;
+        }
+
+        .outletContainer {
+            position: absolute;
+            top: 6rem;
+            bottom: 6rem;
+            width: 100%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            box-sizing: border-box;
+            overflow: auto;
+            padding-bottom: 2rem;
+            .card {
+                position: relative;
+                float: left;
+                height: 10rem;
+                width: 100%;
+                border: 2px dashed #F0C517;
+                margin-top: 2rem;
+                box-sizing: border-box;
+                border-radius: 11px;
+                .cardContent {
+                    position: absolute;
+                    height: 7rem;
+                    width: 100%;
+                    border-bottom: 2px dashed #f0c517;
+                    .col {
+                        position: relative;
+                        float: left;
+                        height: 100%;
+                        width: 33.3%;
+                        padding: 0.8rem;
+                        box-sizing: border-box;
+                        .inner {
+                            position: relative;
+                            height: 100%;
+                            width: 100%;
+                            background: #f0c517;
+                            border-radius: 4px;
+                            .value {
+                                height: 3rem;
+                                text-align: center;
+                                font-size: 3rem;
+                                line-height: 4rem;                            }
+                            .label {
+                                text-align: center;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                height: 2rem;
+                                line-height: 2rem;                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer {
+            position: absolute;
+            height: 6rem;
+            bottom: 0rem;
+            border-top: 1px solid #f0c517;
+            width: 100%;
+        }
+
+        // .header {
+        //     position: absolute;
+        //     height: 8rem;
+        //     left: 2.5rem;
+        //     right: 2.5rem;
+        //     top: 2rem;
+        //     background: #181b1d;
+        //     border: 1px solid #f0c517;
+        //     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); // .userIcon {
+            //     position: absolute;
+            //     height: 100%;
+            //     width: 8rem;
+            //     .userImg {
+            //         position: absolute;
+            //         height: 5rem;
+            //         left: 50%;
+            //         top: 50%;
+            //         transform: translate(-50%, -50%);
+            //     }
+            // }
+        //     .customerInfo {
+        //         position: absolute;
+        //         height: 100%;
+        //         left: 0rem;
+        //         right: 0rem;
+        //         .row {
+        //             position: relative;
+        //             float: left;
+        //             height: 4rem;
+        //             width: 100%;
+        //             line-height: 2rem;
+        //             text-align: center;
+        //             text-transform: capitalize;
+        //             color: #f0c517;
+        //             font-size: 1.3rem;
+        //             font-weight: 300;
+        //             &.userMessage {
+        //                 line-height: 5rem;
+        //                 font-size: 1.6rem;
+        //             }
+        //         }
+        //     }
+        // }
+        // .outletsContainer {
+        //     position: absolute;
+        //     top: 10.5rem;
+        //     bottom: 9rem;
+        //     width: 100%;
+        //     .outlet {
+        //         position: relative;
+        //         float: left;
+        //         height: 13rem;
+        //         width: 39.8%;
+        //         margin-left: 2.5rem;
+        //         margin-top: 2.5rem;
+        //         background: #181b1d;
+        //         border: 1px solid #f0c517;
+        //         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        //         box-sizing: border-box;
+        //         text-align: center;
+        //         line-height: 13rem;
+        //         font-size: 1.6rem;
+        //         text-transform: uppercase;
+        //         color: #f0c517;
+        //     }
+        // }
+        // .logout {
+        //     position: absolute;
+        //     bottom: 2rem;
+        //     height: 5rem;
+        //     left: 2.5rem;
+        //     right: 2.5rem;
+        //     background: #f0c517;
+        //     line-height: 5rem;
+        //     text-align: center;
+        //     font-size: 1.5rem;
+        //     text-transform: uppercase;
+        //     box-sizing: border-box;
+        //     letter-spacing: 0.5px;
+        // }
+    }
+}
+
+.loaderContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    display: none;
+
+    .loader {
+        position: absolute;
+        height: 7rem;
+        width: 7rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

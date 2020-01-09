@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width = device-width, initial-scale = 0, user-scalable = no, minimum-scale = 1, maximum-scale = 1">
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/screen.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/loader.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="outletScreen">
+            <div class="header"></div>
+            <div class="outletContainer">
+                <div class="card">
+                    <div class="cardContent">
+                        <div class="col">
+                            <div class="inner">
+                                <div class="value">10</div>
+                                <div class="label">amount</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="inner">
+                                <div class="value">10</div>
+                                <div class="label">amount</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="inner">
+                                <div class="value">10</div>
+                                <div class="label">amount</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardFooter">
+                        <div class="outlet">delhi</div>
+                        <div class="viewAll">view_all</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="outletName"></div>
+                <div class="view"></div>
+            </div>
+            <!-- <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="value">10K</div>
+                        <div class="label">Amount</div>
+                    </div>
+                    <div class="row">
+                        <div class="value">100</div>
+                        <div class="label">Bill</div>
+                    </div>
+                    <div class="row">
+                        <div class="value">10</div>
+                        <div class="label">Running</div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="title"></div>
+                    <div class="btn"></div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="loaderContainer">
+        <div class="loader">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/x-jquery-tmpl" id="loginTemplate">
+    <div class="loginPageContainer">
+        <div class="logo">
+            QuickPOS
+            <!-- <img src="../images/icon.ico" class="logoIcon"> -->
+        </div>
+        <div class="login" id="abc">
+            <div class="form">
+                <input type="text" class="inputRow userID" data-id="userID" placeholder="User ID">
+                <input type="password" onclick="scrollLogin()" class="inputRow password" data-id="password" placeholder="Password">
+            </div>
+            <div class="loginBtn">submit</div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="outletTemplate">
+    <div class="outletScreen">
+        <div class="header"></div>
+        <div class="outletContainer">
+            {{each(i,v) data}}
+            <div class="card outlet" data-index="{{html i}}" data-id="{{html name}}">
+                <div class="cardContent">
+                    <div class="col">
+                        <div class="inner">
+                            <div class="value">{{html totalSale}}</div>
+                            <div class="label">totalSale</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inner">
+                            <div class="value">10</div>
+                            <div class="label">amount</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inner">
+                            <div class="value">{{html totalOrders}}</div>
+                            <div class="label">totalOrders</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardFooter">
+                    <div class="outletName">{{html name}}</div>
+                    <div class="viewAll">view_all</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="footer">
+            <div class="outletName"></div>
+            <div class="view"></div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="outletTemplate11">
+    <div class="outletScreen">
+        <div class="header">
+            <!-- <div class="userIcon">
+                <img src="../images/user.png" class="userImg">
+            </div> -->
+            <div class="customerInfo">
+                <div class="row userMessage">hello {{html userName}}</div>
+                <div class="row customerMessage">welcom to {{html customerName}}</div>
+            </div>
+        </div>
+        <div class="outletsContainer">
+            {{each(i,v) outlets}}
+            <div class="outlet" data-index="{{html i}}" data-id="{{html outletID}}">{{html name}}</div>
+            {{/each}}
+        </div>
+        <div class="logout">logout</div>
+    </div>
+</script>
+<script type="text/x-jquery-tmpl" id="dashboardBodyTemplate">
+    <div class="innerContainer">
+        <div class="header">
+            <div class="home">
+                <img src="../images/menu.png" class="homeIcon">
+            </div>
+            <div class="customerName"></div>
+            <div class="syncBtn">
+                <img src="../images/sync.png" class="syncIcon">
+            </div>
+        </div>
+        <div class="contentContainer">
+            <div class="infoContainer"></div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="screenTemplate">
+    <div class="dateFilter">
+        <div class="date dateFrom">
+            <input type="date" class="inputDate startDate" data-id="startDate" value="{{html startDate}}">
+        </div>
+        <div class="date dateTo marginLeft">
+            <input type="date" class="inputDate endDate" data-id="endDate" value="{{html endDate}}">
+        </div>
+    </div>
+    <div class="userName"><span class="text" style="font-size:1.2rem;font-weight:200;">welcome to </span> <span class="userNameValue"></span></div>
+    {{each(i,v) screenConfig}} {{if isChart}} {{if singleChart}}
+    <div class="rows {{html parentClassName}}">
+        <div class="chartContainer">
+            <div id="solidGauge" class="mychart"></div>
+            <div class="saleInfo">Qtotal sale is</div>
+        </div>
+        <div class="timeFilter">
+            <div class="col">ytd</div>
+            <div class="col">mtd</div>
+            <div class="col">wtd</div>
+            <div class="col borderNone">today</div>
+        </div>
+    </div>
+    {{else}}
+    <div class="rows {{html parentClassName}}">
+        <div class="infoHeader">
+            {{if showTableIcon}}
+            <div class="icons dataTable" data-index="{{html i}}">
+                <img src="../images/menu.png" class="iconImg">
+            </div>
+            {{/if}}
+            <div class="name">{{html headerTitle}}</div>
+            {{if showChartIcon}}
+            <div class="icons chart" data-index="{{html i}}">
+                <img src="../images/bar-chart.png" class="iconImg chartIcon">
+            </div>
+            {{/if}}
+        </div>
+        <div class="content">
+            <div class="categoryStats marginTop">
+                <div class="infoCard">
+                    {{each categoryMeta}}
+                    <div class="card {{html marginClass}} {{html className}}">
+                        <div class="paymentIcon">
+                            <img src="../images/{{html imgName}}" class="modeIcon">
+                        </div>
+                        <div class="paymentInfoWrapper">
+                            <div class="detail value">{{html Math.round(totalSale)}}</div>
+                            <div class="detail text">{{html _id}}</div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="infoChart"></div>
+            </div>
+        </div>
+    </div>
+    {{/if}} {{else}}
+    <div class="rows">
+        <div class="infoHeader">
+            {{if showTableIcon}}
+            <div class="icons dataTable">
+                <img src="../images/menu.png" class="iconImg">
+            </div>
+            {{/if}}
+            <div class="name">{{html headerTitle}}</div>
+            {{if showChartIcon}}
+            <div class="icons chart">
+                <img src="../images/bar-chart.png" class="iconImg chartIcon">
+            </div>
+            {{/if}}
+        </div>
+        <div class="content">
+            {{if isMultipleRow}} {{if items.length>0}}
+            <div class="table">
+                {{if showConsumption}}
+                <div class="itemConsumptionHeader">
+                    <div class="itemConsumptionType selected" data-id="all">all</div>
+                    <div class="itemConsumptionType" data-id="top">top</div>
+                    <div class="itemConsumptionType borderNone" data-id="worst">worst</div>
+                </div>
+                {{/if}}
+                <div class="tableHeader">
+                    <div class="contentCol category">category</div>
+                    <div class="contentCol quantity">qty</div>
+                    <div class="contentCol sales">sales</div>
+                </div>
+                <div class="tableContent {{html tableContentClass}}">
+                    {{each items}}
+                    <div class="contentRow">
+                        <div class="contentCol category">{{html itemName}}</div>
+                        <div class="contentCol quantity">{{html qty}}</div>
+                        <div class="contentCol sales">{{html amt}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{else}}
+            <div class="notFound">
+                <div class="imgIcon">
+                    <img src="../images/warning.png" class="img">
+                </div>
+                <div class="text">data not found</div>
+            </div>
+            {{/if}} {{else isFourGrid}}
+            <div class="dataTable">
+                {{each gridMeta}}
+                <div class="dataColumn {{html className}}">
+                    <div class="value">{{html value}}</div>
+                    <div class="text">{{html title}}</div>
+                </div>
+                {{/each}}
+            </div>
+            {{else isBoxLayout}}
+            <div class="orderTableContainer">
+                <div class="orders">
+                    {{each orders}} {{if isOrder}}
+                    <div class="orderTable isOrder">
+                        <div class="tableImg">
+                            <img src="../images/table.png" class="tableIcon">
+                        </div>
+                        <div class="billNo">{{html TableNo}}</div>
+                    </div>
+                    {{else isBill}}
+                    <div class="orderTable isBilled">
+                        <div class="tableImg">
+                            <img src="../images/table.png" class="tableIcon">
+                        </div>
+                        <div class="billNo">{{html BillNo}}</div>
+                    </div>
+                    {{/if}} {{/each}}
+                </div>
+                <div class="orderSummery">
+                    <div class="orderSummeryCol occuipied">
+                        <div class="row value">{{html currentOrdersDetails.totalOrder}} - &#8377; {{html Math.round(currentOrdersDetails.totalAmt)}}</div>
+                        <div class="row title">occuipied</div>
+                    </div>
+                    <div class="orderSummeryCol billed">
+                        <div class="row value">{{html billedOrdersDetails.totalOrder}} - &#8377; {{html Math.round(billedOrdersDetails.totalAmt)}}</div>
+                        <div class="row title">billed</div>
+                    </div>
+                </div>
+            </div>
+            {{else isOrderDetails}}
+            <div class="orderDetailsContainer">
+                <div class="detailsHeader">
+                    {{each detailsHeader}}
+                    <div class="{{html cardClass}} detailsHeaderCol {{html tabClassStyle}} {{html defaultClass}} " data-id="{{html id}}">{{html detailsHeaderName}}</div>
+                    {{/each}}
+                </div>
+                {{if isDiscount}}
+                <div class="orderDetailsTable discountBill">
+                    <div class="innerTableHeader">
+                        {{each tableInfo}}
+                        <div class="innerTableHeaderCol {{html textAlign}}">{{html name}}</div>
+                        {{/each}}
+                    </div>
+                    <div class="detailRows">
+                        {{each items}}
+                        <div class="row">
+                            <div class="detailCol">{{html BillNo}}</div>
+                            <div class="detailCol">{{html Math.round(BillAmt)}}</div>
+
+                            <div class="detailCol">{{html FullName}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{else}}
+                <div class="orderDetailsTable modification">
+                    <div class="innerTableHeader">
+                        {{each tableInfo}}
+                        <div class="innerTableHeaderCol {{html textAlign}}">{{html name}}</div>
+                        {{/each}}
+                    </div>
+                    <div class="detailRows">
+                        {{each items}}
+                        <div class="row">
+                            <div class="detailCol">{{html BillNo}}</div>
+                            <div class="detailCol">{{html Math.round(BillAmt)}}</div>
+                            <div class="detailCol">{{html BdiscountPer}}</div>
+                            <div class="detailCol">{{html Math.round(BDiscountAmt)}}</div>
+                            <div class="detailCol">{{html FullName}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+            {{else}} {{if gridMeta.length>0}}
+            <div class="dataTable {{html scrollClass}}">
+                {{each gridMeta}}
+                <div class="dataColumn {{html className}}">
+                    <div class="value">{{html Math.round(totalSale)}}</div>
+                    <div class="text">{{html _id}}</div>
+                </div>
+                {{/each}}
+            </div>
+            {{else}}
+            <div class="notFound">
+                <div class="imgIcon">
+                    <img src="../images/warning.png" class="img">
+                </div>
+                <div class="text">data not found</div>
+            </div>
+            {{/if}} {{/if}}
+            <!-- <div class="infoChart"></div> -->
+        </div>
+    </div>
+    {{/if}} {{/each}}
+</script>
+
+<script type="text/x-jquery-tmpl" id="columnChartTemplate">
+    <div class="pieChart" id="piechartContainer"></div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="complentryOTHBillsTemplate">
+    <div class="innerTableHeader">
+        <div class="innerTableHeaderCol fourCol">BillNo</div>
+        <div class="innerTableHeaderCol fourCol">Amount</div>
+        <div class="innerTableHeaderCol fourCol">By</div>
+        <div class="innerTableHeaderCol fourCol">Reason</div>
+    </div>
+    <div class="detailRows">
+        {{each items}}
+        <div class="row">
+            <div class="detailCol fourCol">{{html BillNo}}</div>
+            <div class="detailCol fourCol">{{html Math.round(BillAmt)}}</div>
+            <div class="detailCol fourCol">{{html FullName}}</div>
+            <div class="detailCol fourCol">{{html BDiscountReason}}</div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="discountBillsTemplate">
+    <div class="innerTableHeader">
+        <div class="innerTableHeaderCol">BillNo</div>
+        <div class="innerTableHeaderCol">Amount</div>
+        <div class="innerTableHeaderCol">Dis %</div>
+        <div class="innerTableHeaderCol">Dis amt</div>
+        <div class="innerTableHeaderCol">by</div>
+    </div>
+    <div class="detailRows">
+        {{each items}}
+        <div class="row">
+            <div class="detailCol">{{html BillNo}}</div>
+            <div class="detailCol">{{html Math.round(BillAmt)}}</div>
+            <div class="detailCol">{{html BdiscountPer}}</div>
+            <div class="detailCol">{{html Math.round(BDiscountAmt)}}</div>
+            <div class="detailCol">{{html FullName}}</div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="modifiedBillsTemplate">
+    <div class="innerTableHeader">
+        <div class="innerTableHeaderCol fourCol">BillNo</div>
+        <div class="innerTableHeaderCol fourCol">Amount</div>
+        <div class="innerTableHeaderCol fourCol">Pre Amount</div>
+        <div class="innerTableHeaderCol fourCol">By</div>
+    </div>
+    <div class="detailRows">
+        {{each items}}
+        <div class="row">
+            <div class="detailCol fourCol">{{html BillNo}}</div>
+            <div class="detailCol fourCol">{{html Math.round(BillAmt)}}</div>
+            <div class="detailCol fourCol">{{html prebillamt}}</div>
+            <div class="detailCol fourCol">{{html FullName}}</div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="cancelBillsTemplate">
+    <div class="innerTableHeader">
+        <div class="innerTableHeaderCol fourCol">BillNo</div>
+        <div class="innerTableHeaderCol fourCol">Amount</div>
+        <div class="innerTableHeaderCol fourCol">CancelReason</div>
+        <div class="innerTableHeaderCol fourCol">By</div>
+    </div>
+    <div class="detailRows">
+        {{each items}}
+        <div class="row">
+            <div class="detailCol fourCol">{{html BillNo}}</div>
+            <div class="detailCol fourCol">{{html Math.round(BillAmt)}}</div>
+            <div class="detailCol fourCol">{{html CancelReason}}</div>
+            <div class="detailCol fourCol">{{html FullName}}</div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+<script type="text/x-jquery-tmpl" id="itemConsumptionTemplate">
+    <div class="contentRow">
+        <div class="contentCol category">{{html itemName}}</div>
+        <div class="contentCol quantity">{{html qty}}</div>
+        <div class="contentCol sales">{{html amt}}</div>
+    </div>
+</script>
+
+<script type="text/javascript" src="../scripts/jquery.js"></script>
+<script type="text/javascript" src="../scripts/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="../scripts/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="../scripts/moment.min.js"></script>
+<script type="text/javascript" src="../scripts/jquery-cooki.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+<script src="../scripts/highcharts.js"></script>
+<script src="../scripts/highcharts-more.js"></script>
+<script src="../chartModuels/series-label.js"></script>
+<script src="../chartModuels//exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="../chartModuels/solid-gauge.js"></script>
+
+<script type="text/javascript" src="../js/appConfig.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/setting.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+
+<script type="text/javascript" src="../charts/solidGauge.js"></script>
+<!-- <script type="text/javascript" src="../charts/areaStacked.js"></script> -->
+<!-- <script type="text/javascript" src="../charts/barSplineMultiaxis.js"></script> -->
+<!-- <script type="text/javascript" src="../charts/linechart.js"></script> -->
+<script type="text/javascript" src="../charts/pieChart.js"></script>
+<script type="text/javascript" src="../charts/columnChart.js"></script>
+
+
+</html>

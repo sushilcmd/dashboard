@@ -1,0 +1,929 @@
+body {
+  margin: 0rem;
+  padding: 0rem;
+  font-family: "Montserrat";
+}
+.mainContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #000000, #12171b);
+  background-position: center;
+  background-size: cover;
+}
+.mainContainer .innerContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.94), #12171b);
+}
+.mainContainer .innerContainer .header {
+  position: absolute;
+  height: 8rem;
+  width: 100%;
+}
+.mainContainer .innerContainer .header .home,
+.mainContainer .innerContainer .header .sync {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0rem;
+}
+.mainContainer .innerContainer .header .home .homeIcon,
+.mainContainer .innerContainer .header .sync .homeIcon {
+  position: absolute;
+  height: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mainContainer .innerContainer .header .syncBtn {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  right: 0rem;
+}
+.mainContainer .innerContainer .header .syncBtn .syncIcon {
+  position: absolute;
+  height: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+.mainContainer .innerContainer .header .customerName {
+  position: absolute;
+  height: 100%;
+  left: 20%;
+  right: 20%;
+  line-height: 8rem;
+  color: #ced8e6;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
+}
+.mainContainer .innerContainer .contentContainer {
+  position: absolute;
+  top: 8rem;
+  bottom: 0rem;
+  width: 100%;
+  overflow: auto;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter {
+  position: relative;
+  float: left;
+  height: 3rem;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter .date {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 47%;
+  border-top: 1px solid #f0c517;
+  border-bottom: 1px solid #f0c517;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f0c517;
+  line-height: 3rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter .date .inputDate {
+  background: transparent;
+  color: #f0c517;
+  font-size: 1.7rem;
+  border: none;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  float: left;
+  outline: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter .date .inputDate.endDate {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter .date input[type="date"]::-webkit-clear-button {
+  -webkit-appearance: none;
+  display: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter .date input[type="date"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter .date.marginLeft {
+  margin-left: 6%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .dateFilter .date .datePicker {
+  position: absolute;
+  left: 4rem;
+  right: 0rem;
+  height: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .userName {
+  position: relative;
+  float: left;
+  height: 4rem;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 4rem;
+  margin-top: 2rem;
+  color: #ced8e6;
+  letter-spacing: 0.5px;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+  margin-top: 3rem;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #f0c517;
+  background: #181b1d;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .chartContainer {
+  position: relative;
+  float: left;
+  height: 20rem;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .chartContainer .saleInfo {
+  position: absolute;
+  display: none;
+  height: 2rem;
+  width: 18rem;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 2rem;
+  left: 50%;
+  bottom: 1rem;
+  color: white;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .timeFilter {
+  position: relative;
+  float: left;
+  height: 3rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 2rem;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .timeFilter .col {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 25%;
+  border-right: 1px solid #f0c517;
+  box-sizing: border-box;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: #f0c517;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .timeFilter .col.borderNone {
+  border: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows.chart {
+  border: none;
+  background: transparent;
+  margin-top: 2rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows.chartWithData {
+  height: 20rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows.pieWithGrid {
+  border: none;
+  background: transparent;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .mychart {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader {
+  position: relative;
+  float: left;
+  height: 4rem;
+  width: 100%;
+  border-bottom: 1px solid #f0c517;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader.plainText {
+  line-height: 4rem;
+  text-align: left;
+  font-size: 1.2rem;
+  color: #f0c517;
+  text-indent: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader .icons {
+  position: absolute;
+  height: 100%;
+  width: 4rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader .icons .iconImg {
+  position: absolute;
+  height: 1.7rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader .icons .iconImg.chartIcon {
+  height: 2rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader .icons.dataTable {
+  left: 0rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader .icons.chart {
+  right: 0rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .infoHeader .name {
+  position: absolute;
+  left: 4rem;
+  right: 4rem;
+  height: 100%;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f0c517;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .notFound {
+  position: relative;
+  height: 6rem;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .notFound .imgIcon {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 40%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .notFound .imgIcon .img {
+  position: absolute;
+  height: 2.5rem;
+  top: 50%;
+  right: 2rem;
+  opacity: 0.8;
+  transform: translateY(-50%);
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .notFound .text {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 50%;
+  line-height: 6rem;
+  text-align: left;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 200;
+  color: #ffffff;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card {
+  position: relative;
+  float: left;
+  height: 7rem;
+  width: 48%;
+  margin-top: 1.5rem;
+  background: #181b1d;
+  box-sizing: border-box;
+  border: 1px solid #f0c517;
+  border-radius: 3px;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card .paymentIcon {
+  position: absolute;
+  height: 100%;
+  width: 7rem;
+  display: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card .paymentIcon .modeIcon {
+  position: absolute;
+  height: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card .paymentInfoWrapper {
+  position: absolute;
+  height: 100%;
+  left: 0rem;
+  right: 0rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card.marginLeft {
+  margin-left: 1.5rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card .detail {
+  position: relative;
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card .detail.value {
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.6rem;
+  padding-top: 0.6rem;
+  box-sizing: border-box;
+  color: #f0c517;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card .detail.text {
+  height: 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #ced8e6;
+  line-height: 2rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoCard .card:nth-child(even) {
+  margin-left: 1.3rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoChart {
+  position: relative;
+  float: left;
+  height: 16rem;
+  width: 100%;
+  display: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .categoryStats .infoChart .pieChart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  float: left;
+  margin-top: 2rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .tableHeader {
+  position: relative;
+  float: left;
+  height: 3rem;
+  width: 100%;
+  border-bottom: 1px solid #f0c517;
+  color: #ced8e6;
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .itemConsumptionHeader {
+  position: relative;
+  float: left;
+  height: 3rem;
+  width: 100%;
+  border-bottom: 1px solid #f0c517;
+  line-height: 3rem;
+  text-align: center;
+  color: #f0c517;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .itemConsumptionHeader .itemConsumptionType {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 33.3%;
+  border-right: 1px solid #f0c517;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .itemConsumptionHeader .itemConsumptionType.selected {
+  background: #f0c517;
+  color: #181b1d;
+  width: 33.4%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .itemConsumptionHeader .itemConsumptionType.borderNone {
+  border: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .tableContent {
+  position: relative;
+  float: left;
+  max-height: 25rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .tableContent .contentRow {
+  position: relative;
+  float: left;
+  height: 3rem;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  border-bottom: 1px dotted #f0c517;
+  color: #f0c517;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .tableContent .contentRow.contentRow:last-child {
+  border: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .contentCol {
+  position: relative;
+  float: left;
+  height: 100%;
+  line-height: 3rem;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  overflow: hidden;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .contentCol.category {
+  width: 68%;
+  padding-left: 1rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .contentCol.quantity,
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .table .contentCol.sales {
+  width: 16%;
+  text-align: center;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .dataTable {
+  position: relative;
+  float: left;
+  height: 6rem;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .dataTable.addScroll {
+  overflow-X: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .dataTable .dataColumn {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 32.5%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .dataTable .dataColumn.fourCol {
+  width: 20%;
+  float: left;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .dataTable .dataColumn .value {
+  position: absolute;
+  height: 4rem;
+  width: 100%;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #f0c517;
+  padding-top: 0.3rem;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .dataTable .dataColumn .text {
+  position: absolute;
+  height: 2rem;
+  bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #ced8e6;
+  line-height: 2rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orders {
+  position: relative;
+  float: left;
+  height: auto;
+  max-height: 25rem;
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orders .orderTable {
+  position: relative;
+  float: left;
+  height: 6rem;
+  width: 21%;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orders .orderTable.isOrder {
+  background: #e53935;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orders .orderTable.isBilled {
+  background: #1565C0;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orders .orderTable .tableImg {
+  position: absolute;
+  height: 3.5rem;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orders .orderTable .tableImg .tableIcon {
+  position: absolute;
+  height: 2.5rem;
+  left: 50%;
+  top: 50%;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orders .orderTable .billNo {
+  position: absolute;
+  bottom: 0rem;
+  height: 2.5rem;
+  width: 100%;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orderSummery {
+  position: relative;
+  float: left;
+  height: 5rem;
+  width: 100%;
+  border-top: 1px solid #f0c517;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orderSummery .orderSummeryCol {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 50%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orderSummery .orderSummeryCol.occuipied {
+  background: #e53935;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orderSummery .orderSummeryCol.billed {
+  background: #1565C0;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orderSummery .orderSummeryCol .row {
+  position: relative;
+  float: left;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orderSummery .orderSummeryCol .row.value {
+  font-size: 1.6rem;
+  line-height: 3.5rem;
+  height: 3rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderTableContainer .orderSummery .orderSummeryCol .row.title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsHeader,
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsFooter {
+  position: relative;
+  float: left;
+  height: 4rem;
+  width: 100%;
+  border-bottom: 1px solid #f0c517;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsHeader.borderTop,
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsFooter.borderTop {
+  border-top: 1px solid #f0c517;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsHeader .detailsHeaderCol,
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsFooter .detailsHeaderCol {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 33.3%;
+  line-height: 4rem;
+  text-align: center;
+  color: #f0c517;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  border-right: 1px solid #f0c517;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsHeader .detailsHeaderCol.selected,
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsFooter .detailsHeaderCol.selected {
+  background: #f0c517;
+  color: #181b1d;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsHeader .detailsHeaderCol.widthHalf,
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsFooter .detailsHeaderCol.widthHalf {
+  width: 50%;
+  text-align: center;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsHeader .detailsHeaderCol:last-child,
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .detailsFooter .detailsHeaderCol:last-child {
+  border-right: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+  overflow: auto;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .orderDetailsTableHeader {
+  position: relative;
+  height: 3rem;
+  width: 100%;
+  border-bottom: 1px solid #f0c517;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .innerTableHeader {
+  position: relative;
+  float: left;
+  height: 3rem;
+  width: 100%;
+  border-bottom: 1px solid #f0c517;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ced8e6;
+  font-weight: 200;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .innerTableHeader .innerTableHeaderCol {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 20%;
+  line-height: 3rem;
+  text-align: center;
+  color: #f0c517;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .innerTableHeader .innerTableHeaderCol.textLeft {
+  text-align: left;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .innerTableHeader .innerTableHeaderCol.fourCol {
+  width: 25%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .detailRows {
+  position: relative;
+  float: left;
+  height: auto;
+  max-height: 20rem;
+  width: 100%;
+  overflow: auto;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .detailRows .row {
+  position: relative;
+  float: left;
+  height: 3rem;
+  width: 100%;
+  border-bottom: 1px dashed #f0c517;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .detailRows .row .detailCol {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 20%;
+  border-right: 1px dashed #f0c517;
+  line-height: 3rem;
+  font-size: 1.1rem;
+  color: #f0c517;
+  box-sizing: border-box;
+  font-weight: 200;
+  text-transform: uppercase;
+  text-align: center;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .detailRows .row .detailCol.fourCol {
+  width: 25%;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .detailRows .row .detailCol:first-child {
+  text-align: left;
+  text-indent: 1rem;
+  box-sizing: border-box;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .detailRows .row .detailCol:last-child {
+  border-right: none;
+}
+.mainContainer .innerContainer .contentContainer .infoContainer .rows .content .orderDetailsContainer .orderDetailsTable .detailRows .row:last-child {
+  border-bottom: none;
+}
+.mainContainer .loginPageContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: linear-gradient(to bottom, #000000, #434343);
+}
+.mainContainer .loginPageContainer .logo {
+  position: relative;
+  text-align: center;
+  height: auto;
+  width: auto;
+  font-family: 'Gugi', cursive;
+  top: 42px;
+  font-size: 4rem;
+  color: #ced8e6;
+}
+.mainContainer .loginPageContainer .login {
+  position: relative;
+  height: auto;
+  width: 30rem;
+  text-align: center;
+  left: 30px;
+  top: 140px;
+}
+.mainContainer .loginPageContainer .login .form {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+}
+.mainContainer .loginPageContainer .login .form .inputRow {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  font-size: 1.8rem;
+  color: #f0c517;
+  float: left;
+  background: none;
+  margin-top: 2rem;
+  outline: none;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  border: none;
+  -webkit-appearance: none;
+  border-bottom: 1px solid #f0c517;
+  text-align: center;
+}
+.mainContainer .loginPageContainer .login .loginBtn {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  font-size: 1.8rem;
+  margin-top: 3.5rem;
+  float: left;
+  color: #434343;
+  box-sizing: border-box;
+  background: #f0c517;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.mainContainer .outletScreen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.94), #12171b);
+}
+.mainContainer .outletScreen .header {
+  position: absolute;
+  height: 6rem;
+  border-bottom: 1px solid #f0c517;
+  width: 100%;
+}
+.mainContainer .outletScreen .outletContainer {
+  position: absolute;
+  top: 6rem;
+  bottom: 6rem;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
+  padding-bottom: 2rem;
+}
+.mainContainer .outletScreen .outletContainer .card {
+  position: relative;
+  float: left;
+  height: 10rem;
+  width: 100%;
+  border: 2px dashed #F0C517;
+  margin-top: 2rem;
+  box-sizing: border-box;
+  border-radius: 11px;
+}
+.mainContainer .outletScreen .outletContainer .card .cardContent {
+  position: absolute;
+  height: 7rem;
+  width: 100%;
+  border-bottom: 2px dashed #f0c517;
+}
+.mainContainer .outletScreen .outletContainer .card .cardContent .col {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 33.3%;
+  padding: 0.8rem;
+  box-sizing: border-box;
+}
+.mainContainer .outletScreen .outletContainer .card .cardContent .col .inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #f0c517;
+  border-radius: 4px;
+}
+.mainContainer .outletScreen .outletContainer .card .cardContent .col .inner .value {
+  height: 3rem;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+.mainContainer .outletScreen .outletContainer .card .cardContent .col .inner .label {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 2rem;
+  line-height: 2rem;
+}
+.mainContainer .outletScreen .footer {
+  position: absolute;
+  height: 6rem;
+  bottom: 0rem;
+  border-top: 1px solid #f0c517;
+  width: 100%;
+}
+.loaderContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  display: none;
+}
+.loaderContainer .loader {
+  position: absolute;
+  height: 7rem;
+  width: 7rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
